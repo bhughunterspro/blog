@@ -1,0 +1,24 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class addMeFast {
+ public WebDriver driver;
+ String winHandleBefore = driver.getWindowHandle();
+ 
+ public static void main(String args[]) throws Exception {
+      
+       System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver.exe");//add path of your chromedriver.exe
+  
+        WebDriver driver = new ChromeDriver();
+ driver.manage().window().maximize();
+ driver.get("http://www.bing.com");
+  
+        Thread.sleep(3000);
+
+ driver.findElement(By.name("q")).clear(); 
+        driver.findElement(By.name("q")).sendKeys("software testing tips and tricks");
+         driver.findElement(By.name("go")).click();   
+     
+ }
+}
